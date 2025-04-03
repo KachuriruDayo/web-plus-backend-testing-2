@@ -20,11 +20,11 @@ describe('PostsService', () => {
     });
 
     it('should return all posts if called without options', () => {
-      // реализуйте тест-кейс
+      expect(postsService.findMany()).toMatchObject(posts);
     });
 
     it('should return correct posts for skip and limit options', () => {
-      // реализуйте тест-кейс
+      expect(postsService.findMany({skip: 2, limit: 1})).toMatchObject([{id: '3', text: 'Post 3'}]);
     });
 
     // реализуйте недостающие тест-кейсы
